@@ -106,7 +106,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background-image: url('images/paper.png');
+        background-image: url('../images/paper.png');
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply;
