@@ -14,8 +14,15 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="top">
+
     <div class="hero-image">
-      <img src="images/main.png" alt="Васюки — столица шахматного мира">
+      <picture>
+        <!-- Мобильная версия (обрезанная, ~375px) -->
+        <source media="(max-width: 639px)" srcset="images/hero-mobile-crop.png">
+
+        <!-- Десктопная версия (ваша основная) -->
+        <img src="images/main.png" alt="Васюки — столица шахматного мира">
+      </picture>
     </div>
     <div class="hero-top">
       <!-- Logo -->
@@ -113,7 +120,7 @@
   <section class="stages-section" id="stages">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title reveal">Этапы преображения</h2>
+        <h2 class="section-title">Этапы преображения</h2>
         <div class="title-footer">
           <span class="last-line">Васюков</span>
           <p class="section-sub">Будущие источники обогащения васюкинцев</p>
@@ -158,18 +165,26 @@
 
       <!-- Mobile carousel (non-looping, no auto-advance) -->
       <div class="stages-mobile">
+        <img src="images/airplane.png" class="stages-airplane-mobile" alt="Самолёт">
+
         <div class="stages-carousel">
+
           <div class="stages-track" id="stagesTrack">
+
+            <!-- Слайд 1: самолёт + карточки 1–2 -->
             <div class="stages-slide">
-              <div class="stage-card"><span class="stage-num">1</span>
-                <p class="stage-text">Строительство железнодорожной магистрали Москва-Васюки</p>
+              <div class="stages-slide-inner">
+                <div class="stage-card">
+                  <span class="stage-num">1</span>
+                  <p class="stage-text">Строительство железнодорожной магистрали Москва-Васюки</p>
+                </div>
+                <div class="stage-card">
+                  <span class="stage-num">2</span>
+                  <p class="stage-text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
+                </div>
               </div>
             </div>
-            <div class="stages-slide">
-              <div class="stage-card"><span class="stage-num">2</span>
-                <p class="stage-text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
-              </div>
-            </div>
+
             <div class="stages-slide">
               <div class="stage-card"><span class="stage-num">3</span>
                 <p class="stage-text">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей,
@@ -177,13 +192,13 @@
               </div>
             </div>
             <div class="stages-slide">
-              <div class="stage-card"><span class="stage-num">4</span>
-                <p class="stage-text">Строительство дворца для турнира</p>
-              </div>
-            </div>
-            <div class="stages-slide">
-              <div class="stage-card"><span class="stage-num">5</span>
-                <p class="stage-text">Размещение гаражей для гостевого автотранспорта</p>
+              <div class="stages-slide-inner">
+                <div class="stage-card"><span class="stage-num">4</span>
+                  <p class="stage-text">Строительство дворца <br> для турнира</p>
+                </div>
+                <div class="stage-card"><span class="stage-num">5</span>
+                  <p class="stage-text">Размещение гаражей <br> для гостевого автотранспорта</p>
+                </div>
               </div>
             </div>
             <div class="stages-slide">
@@ -199,23 +214,32 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="stages-nav">
-          <button class="btn-icon" id="stagesPrev" aria-label="Назад" disabled> <svg width="12" height="20"
-              viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.5858 1.41418L2.12427 9.87572L10.5858 18.3373" stroke="currentColor" stroke-width="2"
-                stroke-linecap="square" />
-            </svg></button>
-          <span class="stages-counter" id="stagesCounter">1 / 7</span>
-          <button class="btn-icon" id="stagesNext" aria-label="Вперёд"> <svg width="12" height="20" viewBox="0 0 12 20"
-              fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.41419 1.41418L9.87573 9.87572L1.41419 18.3373" stroke="currentColor" stroke-width="2"
-                stroke-linecap="square" />
-            </svg></button>
-        </div>
-      </div>
 
-    </div>
+          <!-- Навигация с точками -->
+          <div class="stages-nav">
+            <button class="btn-icon" id="stagesPrev" disabled>
+              <svg width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M10.5858 1.41418L2.12427 9.87572L10.5858 18.3373" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="square" />
+              </svg>
+            </button>
+            <div class="stages-dots" id="stagesDots">
+              <button class="stages-dot active" data-idx="0"></button>
+              <button class="stages-dot" data-idx="1"></button>
+              <button class="stages-dot" data-idx="2"></button>
+              <button class="stages-dot" data-idx="3"></button>
+              <button class="stages-dot" data-idx="4"></button>
+            </div>
+            <button class="btn-icon" id="stagesNext">
+              <svg width="12" height="20" viewBox="0 0 12 20" fill="none">
+                <path d="M1.41419 1.41418L9.87573 9.87572L1.41419 18.3373" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="square" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
   </section>
 
   <!-- ==================== PARTICIPANTS ==================== -->
@@ -223,9 +247,9 @@
     <div class="container">
       <div class="participants-header">
         <div>
-          <h2 class="section-title reveal">Участники турнира</h2>
+          <h2 class="section-title">Участники турнира</h2>
         </div>
-        <div class="participants-controls">
+        <div class="participants-controls pc">
           <button class="btn-icon" id="partPrev" aria-label="Назад">
             <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10.5858 1.41418L2.12427 9.87572L10.5858 18.3373" stroke="currentColor" stroke-width="2"
@@ -246,7 +270,7 @@
         <div class="carousel-track" id="partTrack">
 
           <!-- Card 1 -->
-          <div class="participant-card reveal">
+          <div class="participant-card">
             <div class="participant-avatar"><img src="images/chess_player_avatar.png" alt="Участник турнира"
                 style="width:100%;height:100%;object-fit:cover;"></div>
             <p class="participant-name">Хозе-Рауль Капабланка</p>
@@ -301,7 +325,21 @@
 
         </div><!-- /carousel-track -->
       </div><!-- /carousel-outer -->
-
+      <div class="participants-controls mobile">
+        <button class="btn-icon" id="partPrev" aria-label="Назад">
+          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5858 1.41418L2.12427 9.87572L10.5858 18.3373" stroke="currentColor" stroke-width="2"
+              stroke-linecap="square" />
+          </svg>
+        </button>
+        <span class="participants-counter" id="partCounter">1 / 6</span>
+        <button class="btn-icon" id="partNext" aria-label="Вперёд">
+          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.41419 1.41418L9.87573 9.87572L1.41419 18.3373" stroke="currentColor" stroke-width="2"
+              stroke-linecap="square" />
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
