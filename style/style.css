@@ -1036,6 +1036,7 @@
             font-weight: 400;
             margin-bottom: 4px;
             border-right: none;
+            width: 100%;
         }
 
         /* Значение (жирное) */
